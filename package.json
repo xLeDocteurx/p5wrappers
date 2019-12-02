@@ -1,0 +1,44 @@
+{
+  "name": "p5wrappers",
+  "version": "0.0.1",
+  "description": "P5.js wrappers for React and Vue.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-bundle": "npx bili --bundle-node-modules"
+  },
+  "dependencies": {
+    "p5": "^0.10.2"
+  },
+  "devDependencies": {
+    "bili": "^4.8.1"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xLeDocteurx/p5wrappers.git"
+  },
+  "author": {
+    "name": "xLeDocteurx",
+    "email": "lenoirc.fr@gmail.com"
+  },
+  "keywords": [
+    "p5",
+    "wrapper",
+    "react",
+    "reactjs",
+    "vue",
+    "vuejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/xLeDocteurx/p5wrappers/issues"
+  },
+  "homepage": "https://github.com/xLeDocteurx/p5wrappers#readme",
+  "license": "MIT"
+}
