@@ -8,9 +8,6 @@ P5.js wrappers for React and Vue.js
 This Components lets you integrate p5 Sketches into your React & Vue App.
 
 ## Installation
-
-The easiest way to use react-p5-wrapper is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
-
 ```
 npm install p5wrappers --save
 ```

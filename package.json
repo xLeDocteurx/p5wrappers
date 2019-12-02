@@ -1,7 +1,7 @@
 {
   "name": "p5wrappers",
   "version": "0.0.1",
-  "description": "P5.js wrappers for React and Vue.js",
+  "description": "P5.js wrappers for React and Vue",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
