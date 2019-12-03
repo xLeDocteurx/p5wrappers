@@ -13,15 +13,20 @@ class P5Wrapper extends Component {
 
     componentDidMount() {
         this.setState({canvas: new p5(this.props.sketch, this.el)})
-        this.doesComponentReceivedDatas()
+        // this.doesComponentReceivedDatas()
     }
 
     componentDidUpdate() {
-        this.doesComponentReceivedDatas()
+        // this.doesComponentReceivedDatas()
     }
 
     doesComponentReceivedDatas() {
-        this.state.canvas.datas = this.props.datas ? this.props.datas : null
+        // this.state.canvas.datas = this.props.datas ? this.props.datas : null
+        if(this.props.datas) {
+            this.state.canvas.datas = this.props.datas
+        } else {
+            this.state.canvas.datas = null
+        }
     }
 
     render() {

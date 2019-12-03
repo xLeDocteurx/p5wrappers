@@ -72,7 +72,6 @@ export default YourComponent
 <script>
 // import as for fancy name
 import {VueP5Wrapper as P5} from 'p5wrappers'
-import p5 from 'p5'
 
 import yourSketch from './yourDir/yourSketch'
 

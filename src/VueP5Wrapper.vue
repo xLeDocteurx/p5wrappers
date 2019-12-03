@@ -33,7 +33,12 @@ export default {
     },
     methods: {
         doesComponentReceivedDatas() {
-            this.canvas.datas = this.props.datas ? this.props.datas : null
+            // this.canvas.datas = this.props.datas ? this.props.datas : null
+            if(this.props.datas) {
+                this.canvas.datas = this.props.datas
+            } else {
+                this.canvas.datas = null
+            }
         },
     }
 }
