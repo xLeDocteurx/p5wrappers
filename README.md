@@ -1,4 +1,4 @@
-<!-- [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xLeDocteurx/p5wrappers)](https://www.npmjs.com/package/p5wrappers) -->
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xLeDocteurx/p5wrappers)](https://www.npmjs.com/package/p5wrappers)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/xLeDocteurx/p5wrappers/pulls)
 [![GitHub](https://img.shields.io/github/license/xLeDocteurx/p5wrappers)](https://github.com/xLeDocteurx/p5wrappers/pulls)
 
@@ -6,6 +6,8 @@
 
 P5.js wrappers for React and Vue.js 
 This Components lets you integrate p5 Sketches into your React & Vue App.
+
+- 0.1.0 update : Now you can pass a data object to the wrappers to receive data from your components into your sketch scripts
 
 ## Installation
 ```
@@ -30,7 +32,8 @@ class YourComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            sketch: yourSketch
+            sketch: yourSketch,
+            backgroundColor: '#F4F4F4'
         }
     }
 
@@ -38,7 +41,12 @@ class YourComponent extends Component {
         return (
             <div>
                 <!-- Your stuff -->
-                <P5 sketch={yourSketch} />
+
+                <!-- 
+                You can inject some data object into the component 
+                via the "data" props to get it in the sketch script
+                -->
+                <P5 sketch={this.state.sketch} data={{backgroundColor}} />
             </div>
         )
     }
@@ -51,8 +59,13 @@ export default YourComponent
 ```html
 <template>
     <div>
-        <!-- Your stuff --> 
-        <P5 :sketch={sketch} />
+        <!-- Your stuff -->
+
+        <!-- 
+        You can pass some data object into the component 
+        via the "data" props to receive it in the sketch script
+        -->
+        <P5 :sketch="this.sketch" :data="{this.sketch}" />
     </div>
 </template>
 
@@ -77,7 +90,7 @@ export default {
 </script>
 ```
 
-An Sketch could look like this and should be passed as a prop into the component:
+A Sketch could look like this and should be passed as a prop into the component:
 it uses the instance mode of p5, see : [https://github.com/processing/p5.js/wiki/Global-and-instance-mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
 ```javascript
 export default function sketch (p5) {
@@ -88,7 +101,9 @@ export default function sketch (p5) {
     }
   
     p5.draw = function() {
-        p5.background(0)
+        // You can get the data into the data props
+        const color = p5.data.color
+        p5.background(color)
     }
 }
 ```

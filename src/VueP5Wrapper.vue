@@ -13,6 +13,12 @@ export default {
     computed: {
 
     },
+    props: {
+        data: {
+            type: Object,
+            required: false
+        },
+    },
     data() {
         return {
             canvas: null,
@@ -20,6 +26,15 @@ export default {
     },
     mounted() {
         this.canvas = new p5(this.props.sketch, this.$refs.sketch)
+        this.doesComponentReceivedDatas()
+    },
+    updated() {
+        this.doesComponentReceivedDatas()
+    },
+    methods: {
+        doesComponentReceivedDatas() {
+            this.canvas.datas = this.props.datas ? this.props.datas : null
+        },
     }
 }
 </script>
