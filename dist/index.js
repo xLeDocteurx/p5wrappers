@@ -7,8 +7,6 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = require('react');
-var React__default = _interopDefault(React);
 var p5 = _interopDefault(require('p5'));
 var __vue_normalize__ = _interopDefault(require('../node_modules/rollup-plugin-vue/runtime/normalize.js'));
 
@@ -81,6 +79,10 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
+// import React, {Component} from 'react'
+var _require = require('react'),
+    Component = _require.Component;
+
 var P5Wrapper =
 /*#__PURE__*/
 function (_Component) {
@@ -126,7 +128,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return React__default.createElement("div", {
+      return React.createElement("div", {
         ref: function ref(el) {
           _this2.el = el;
         }
@@ -135,7 +137,7 @@ function (_Component) {
   }]);
 
   return P5Wrapper;
-}(React.Component);
+}(Component);
 
 //
 var script = {
