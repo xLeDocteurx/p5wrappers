@@ -9,24 +9,27 @@ class P5Wrapper extends Component {
         this.state = {
             canvas: null,
         }
+
+        this.doesComponentReceivedDatas = this.doesComponentReceivedDatas.bind(this)
     }
 
     componentDidMount() {
         this.setState({canvas: new p5(this.props.sketch, this.el)})
-        // this.doesComponentReceivedDatas()
     }
 
     componentDidUpdate() {
-        // this.doesComponentReceivedDatas()
+        this.doesComponentReceivedDatas()
     }
 
     doesComponentReceivedDatas() {
-        // this.state.canvas.datas = this.props.datas ? this.props.datas : null
-        if(this.props.datas) {
-            this.state.canvas.datas = this.props.datas
-        } else {
-            this.state.canvas.datas = null
-        }
+        this.state.canvas.datas = this.props.datas ? this.props.datas : null
+
+        // this.setState((prevState) => ({
+        //     canvas: {
+        //         ...prevState.canvas,
+        //         ...dataObject
+        //     }
+        // }))
     }
 
     render() {

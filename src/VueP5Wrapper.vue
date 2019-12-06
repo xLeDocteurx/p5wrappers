@@ -26,19 +26,14 @@ export default {
     },
     mounted() {
         this.canvas = new p5(this.props.sketch, this.$refs.sketch)
-        this.doesComponentReceivedDatas()
+        // this.doesComponentReceivedDatas()
     },
     updated() {
         this.doesComponentReceivedDatas()
     },
     methods: {
         doesComponentReceivedDatas() {
-            // this.canvas.datas = this.props.datas ? this.props.datas : null
-            if(this.props.datas) {
-                this.canvas.datas = this.props.datas
-            } else {
-                this.canvas.datas = null
-            }
+            this.canvas.datas = this.props.datas ? this.props.datas : null
         },
     }
 }

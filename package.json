@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-bundle": "npx bili --bundle-node-modules"
+    "build-bundle": "npx bili",
+    "build-bundle-modules": "npx bili --bundle-node-modules"
   },
   "dependencies": {
     "p5": "^0.10.2"

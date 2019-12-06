@@ -7,6 +7,9 @@
 P5.js wrappers for React and Vue.js 
 This Components lets you integrate p5 Sketches into your React & Vue App.
 
+A bug with the bundling of the Vue js component make it unusable at the moment.
+It will be fixed soon. Sorry for the inconvenience
+
 - 0.1.0 update : Now you can pass a data object to the wrappers to receive data from your components into your sketch scripts
 
 ## Installation
