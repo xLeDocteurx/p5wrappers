@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+// import React, {Component} from 'react'
+const {Component} = require('react')
 import p5 from 'p5'
 
 class P5Wrapper extends Component {

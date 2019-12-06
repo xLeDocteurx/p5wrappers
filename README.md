@@ -68,7 +68,7 @@ export default YourComponent
         You can pass some data object into the component 
         via the "data" props to receive it in the sketch script
         -->
-        <P5 :sketch="this.sketch" :data="{this.sketch}" />
+        <P5 :sketch="sketch" :data="{backgroundColor}" />
     </div>
 </template>
 
@@ -86,6 +86,7 @@ export default {
     data() {
         return {
             sketch: yourSketch,
+            backgroundColor: '#F4F4F4'
         }
     }
 }
