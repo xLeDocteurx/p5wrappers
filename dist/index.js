@@ -1,5 +1,5 @@
 /*!
- * p5wrappers v0.1.0
+ * p5wrappers v0.0.2
  * (c) xLeDocteurx <lenoirc.fr@gmail.com>
  * Released under the MIT License.
  */
@@ -104,22 +104,22 @@ function (_Component) {
     value: function componentDidMount() {
       this.setState({
         canvas: new p5(this.props.sketch, this.el)
-      }); // this.doesComponentReceivedDatas()
+      });
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {// this.doesComponentReceivedDatas()
+    value: function componentDidUpdate() {
+      this.doesComponentReceivedDatas();
     }
   }, {
     key: "doesComponentReceivedDatas",
     value: function doesComponentReceivedDatas() {
-      // this.state.canvas.datas = this.props.datas ? this.props.datas : null
-      var dataObject = {
-        data: this.props.data ? this.props.data : null
-      };
-      this.setState({
-        canvas: Object.assign({}, this.state.canvas, dataObject)
-      });
+      this.state.canvas.datas = this.props.datas ? this.props.datas : null; // this.setState((prevState) => ({
+      //     canvas: {
+      //         ...prevState.canvas,
+      //         ...dataObject
+      //     }
+      // }))
     }
   }, {
     key: "render",
@@ -154,20 +154,14 @@ var script = {
     };
   },
   mounted: function mounted() {
-    this.canvas = new p5(this.props.sketch, this.$refs.sketch);
-    this.doesComponentReceivedDatas();
+    this.canvas = new p5(this.props.sketch, this.$refs.sketch); // this.doesComponentReceivedDatas()
   },
   updated: function updated() {
     this.doesComponentReceivedDatas();
   },
   methods: {
     doesComponentReceivedDatas: function doesComponentReceivedDatas() {
-      // this.canvas.datas = this.props.datas ? this.props.datas : null
-      if (this.props.datas) {
-        this.canvas.datas = this.props.datas;
-      } else {
-        this.canvas.datas = null;
-      }
+      this.canvas.datas = this.props.datas ? this.props.datas : null;
     }
   }
 };
@@ -194,7 +188,7 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-aa1d6a08";
+var __vue_scope_id__ = "data-v-20830f08";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
