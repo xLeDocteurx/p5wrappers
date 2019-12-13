@@ -16,6 +16,16 @@ It will be fixed soon. Sorry for the inconvenience
 ```
 npm install p5wrappers --save
 ```
+## Compilation
+```
+// Both commands compile the code to the dist folder as well as in the examples projects. You can use them while developing
+
+// building the library from what's inside the "src" folder to the "dist" folder
+npm run build-bundle
+
+// building the library and include all the dependencies into the library code, from what's inside the "src" folder to the "dist" folder
+npm run build-bundle-modules
+```
 
 
 ## Usage
